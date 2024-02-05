@@ -17,7 +17,7 @@ const NavBar = () => {
                 </div>
             </div>
             <div className={s.rightBox}>
-                <Button type="icon" children="a"/>
+                <Button type="icon" children="a" className={s.cartButton}/>
                 <Avatar />
             </div>
         </div>

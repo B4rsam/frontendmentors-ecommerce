@@ -1,5 +1,26 @@
+@import '../../assets/palette'
+    
 .navBar
     display: flex
-    justify-content: space-between
+    justify-content: space-around
     border-bottom: 2px solid
-    border-color: black
+    border-color: $grayishblue-light
+    margin-block: 32px
+
+    .leftBox
+        display: flex
+        align-items: center
+
+        .logo
+            margin-inline: 32px
+
+    .rightBox
+        display: flex
+        padding: 16px
+        align-items: center
+        
+        .cartButton
+            margin: 16px
+    .buttons
+        padding: 32px
+        margin: 64px
