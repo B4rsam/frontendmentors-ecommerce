@@ -18,12 +18,6 @@ function App() {
 
 export default App
 
-//nav bar
-//  logo
-//  buttons
-//  cart
-//  avatar
-
 //body
 //  big pics
 //  other pics
