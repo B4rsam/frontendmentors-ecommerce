@@ -4,7 +4,7 @@ import s from './button.module.sass';
 
 type btnTypes= "primary" | "navbar" | "icon" | "picture";
 interface IButton extends HTMLAttributes<HTMLButtonElement> {
-    children: ReactNode;
+    children?: ReactNode;
     className?: string;
     src?: string
     type: btnTypes;

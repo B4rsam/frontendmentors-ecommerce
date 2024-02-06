@@ -9,12 +9,12 @@ import Button from '../Button/Button'
 const PictureSection = () => {
     return (
         <div className={s.picSection}>
-            <img className={s.mainPic} src={prod1}/>
+            <Button type="picture" className={s.mainPic} src={prod1}/>
             <div className={s.thumbs}>
-                <img src={thumb1}/>
-                <img src={thumb2}/>
-                <img src={thumb3}/>
-                <img src={thumb4}/>
+                <Button type="picture" className={s.thumbnails} src={thumb1}/>
+                <Button type="picture" className={s.thumbnails} src={thumb2}/>
+                <Button type="picture" className={s.thumbnails} src={thumb3}/>
+                <Button type="picture" className={s.thumbnails} src={thumb4}/>
             </div>
         </div>
     )
