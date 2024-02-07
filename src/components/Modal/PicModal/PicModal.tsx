@@ -4,14 +4,16 @@ import Button from '../../Button/Button'
 
 interface IPicModal extends HTMLAttributes<HTMLDivElement> {
     focusPicture: any
+    onExit: () => void
 }
 
-const PicModal : FC<IPicModal>= ({focusPicture}) => {
+const PicModal : FC<IPicModal>= ({focusPicture, onExit}) => {
     const [focusPic, setPic] = useState(focusPicture)
+
     return (
         <div className={s.modalWrapper}>
             <div className={s.modalBody}>
-                <Button type="primary" children="s" className={s.closeBtn}/>
+                <Button type="primary" children="s" className={s.closeBtn} onClick={onExit}/>
                 <img src={focusPic} className={s.focusPicture}/>
                 <Button type="primary" children="l" className={`${s.switcher} switcher ${s.left}`}/>
                 <Button type="primary" children="r" className={`${s.switcher} switcher ${s.right}`}/>

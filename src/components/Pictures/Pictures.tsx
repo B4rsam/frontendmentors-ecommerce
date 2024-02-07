@@ -15,10 +15,14 @@ const PictureSection = () => {
     const [currentPic, setPic] = useState(prod1)
     const [modal, setModal] = useState(false)
 
+    const handleModal = () => {
+        setModal(!modal)
+    } 
+
     return (
         <div className={s.picSection}>
-            {modal ? <PicModal focusPicture={currentPic}/> : null}
-            <Button type="picture" className={s.mainPic} src={currentPic} onClick={() => setModal(!modal)}/>
+            {modal ? <PicModal onExit={handleModal} focusPicture={currentPic}/> : null}
+            <Button type="picture" className={s.mainPic} src={currentPic} onClick={handleModal}/>
             <form className={s.thumbs}>
                 <label className={s.thumbnails}>
                     <input type="radio" name="thumbs" className={s.thumbnails} onChange={() => setPic(prod1)}/>
