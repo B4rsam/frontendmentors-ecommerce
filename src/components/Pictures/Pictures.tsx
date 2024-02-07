@@ -9,13 +9,16 @@ import thumb3 from '../../assets/products/image-product-3-thumbnail.jpg'
 import thumb4 from '../../assets/products/image-product-4-thumbnail.jpg'
 import Button from '../Button/Button'
 import { useState } from 'react'
+import PicModal from '../Modal/PicModal/PicModal'
 
 const PictureSection = () => {
     const [currentPic, setPic] = useState(prod1)
+    const [modal, setModal] = useState(false)
 
     return (
         <div className={s.picSection}>
-            <Button type="picture" className={s.mainPic} src={currentPic}/>
+            {modal ? <PicModal focusPicture={currentPic}/> : null}
+            <Button type="picture" className={s.mainPic} src={currentPic} onClick={() => setModal(!modal)}/>
             <form className={s.thumbs}>
                 <label className={s.thumbnails}>
                     <input type="radio" name="thumbs" className={s.thumbnails} onChange={() => setPic(prod1)}/>

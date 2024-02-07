@@ -1,0 +1,42 @@
+@import '../../../assets/palette'
+
+.modalWrapper
+    position: fixed
+    height: 100%
+    width: 100%
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: rgba(0,0,0,0.3)
+    z-index: 100
+
+    .modalBody
+        display: flex
+        position: relative
+        flex-direction: column
+        width: 60%
+        margin-inline: auto
+        margin-block: 128px
+        align-items: center
+
+        .closeBtn
+            position: absolute
+            top: -32px
+            right: 230px
+
+        .focusPicture
+            height: 422px !important
+            width: 422px !important
+            border-radius: 20px
+
+        .switcher
+            position: absolute
+            background-color: $white
+            top: 211px
+
+            &.right
+                right: 200px
+
+            &.left
+                left: 200px
