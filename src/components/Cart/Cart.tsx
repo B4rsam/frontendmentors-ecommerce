@@ -8,9 +8,9 @@ const CartSection = () => {
     return (
         <div className={s.cartBody}>
             <div className={s.quantitySection}>
-                <Button type="picture" className={s.countBtn} src={minus}/>
-                <div id="quantity">0</div>
-                <Button type="picture" className={s.countBtn} src={plus}/>
+                <Button type="picture" className={`${s.countBtn} ${s.minus}`} src={minus}/>
+                <div id="quantity" className={s.countNum}>0</div>
+                <Button type="picture" className={`${s.countBtn} ${s.plus}`} src={plus}/>
             </div>
             <Button type="primary" children={`Add to Cart`} className={s.cartBtn}/>
         </div>
