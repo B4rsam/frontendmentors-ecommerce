@@ -13,10 +13,10 @@ const PicModal : FC<IPicModal>= ({focusPicture, onExit}) => {
     return (
         <div className={s.modalWrapper}>
             <div className={s.modalBody}>
-                <Button type="primary" children="s" className={s.closeBtn} onClick={onExit}/>
+                <Button type="icon" icon="close" className={s.closeBtn} onClick={onExit}/>
                 <img src={focusPic} className={s.focusPicture}/>
-                <Button type="primary" children="l" className={`${s.switcher} switcher ${s.left}`}/>
-                <Button type="primary" children="r" className={`${s.switcher} switcher ${s.right}`}/>
+                <Button type="icon" icon="back" className={`${s.switcher} switcher ${s.left}`}/>
+                <Button type="icon" icon="next" className={`${s.switcher} switcher ${s.right}`}/>
                 <div className={s.thumbSection}>
 
                 </div>

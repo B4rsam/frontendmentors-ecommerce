@@ -8,7 +8,7 @@
     left: 0
     right: 0
     bottom: 0
-    background-color: rgba(0,0,0,0.3)
+    background-color: rgba(0,0,0,0.7)
     z-index: 100
 
     .modalBody
@@ -24,6 +24,12 @@
             position: absolute
             top: -32px
             right: 230px
+            color: $white
+            font-weight: 700
+            font-size: 18px
+            
+            &:hover
+                color: $orange
 
         .focusPicture
             height: 422px !important
@@ -34,6 +40,9 @@
             position: absolute
             background-color: $white
             top: 211px
+            height: 36px
+            width: 36px
+            border-radius: 100%
 
             &.right
                 right: 200px
