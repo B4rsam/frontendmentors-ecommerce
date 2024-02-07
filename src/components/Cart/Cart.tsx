@@ -1,6 +1,5 @@
 import s from './cart.module.sass'
 import Button from '../Button/Button'
-import cart from '../../assets/icons/icon-cart.svg'
 import plus from '../../assets/icons/icon-plus.svg'
 import minus from '../../assets/icons/icon-minus.svg'
 
@@ -12,7 +11,7 @@ const CartSection = () => {
                 <div id="quantity" className={s.countNum}>0</div>
                 <Button type="picture" className={`${s.countBtn} ${s.plus}`} src={plus}/>
             </div>
-            <Button type="primary" children={`Add to Cart`} className={s.cartBtn}/>
+            <Button type="normal" children={`Add to Cart`} className={s.cartBtn}/>
         </div>
     )
 }
