@@ -17,8 +17,13 @@ const Button : FC<IButton>= ({children, className, type, src}) => {
                 return <button className={`${s.button} ${s.icon} ${className}`}><img src={cart}/></button>
             case "picture":
                 return <button className={`${s.button} ${s.picture} ${className}`}><img src={src}/></button>
-            default:
-                return <button className={`${s.button} ${s[type]} ${className}`}>{children}</button>
+            case "primary":
+                return (
+                    <div className={className}>
+                        <img src={cart} className={s.btnImg}/>
+                        <button className={`${s.button} ${s[type]} ${className}`}>{children}</button>
+                    </div>
+                    )
         }    
     }
     
