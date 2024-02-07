@@ -10,8 +10,6 @@
     margin-block: 8px
     height: 96px
     width: 96px
-    &:hover
-        cursor: pointer
 
     img
         height: 96px
@@ -19,11 +17,12 @@
         border-radius: 20%
 
     .thumbnails
+        &:hover
+            cursor: pointer
         appearance: none
         margin-inline: 6px
-        &:checked
-            img
-                border: 3px solid
-                border-color: $orange
-                border-radius: 20%
-                opacity: 0.7
+        &:checked + img
+            border: 3px solid
+            border-color: $orange
+            border-radius: 20%
+            opacity: 0.7
