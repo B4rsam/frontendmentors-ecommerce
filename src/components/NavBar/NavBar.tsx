@@ -28,7 +28,7 @@ const NavBar = () => {
                 <Button type="icon" children="a" className={s.cartButton} icon="cart" onClick={handleModal}/>
                 <Avatar />
             </div>
-            {showModal ? <CartModal /> : null}
+            {showModal ? <CartModal count={3}/> : null}
         </div>
     )
 }
