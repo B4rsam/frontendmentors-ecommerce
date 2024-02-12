@@ -15,12 +15,15 @@ const CartSection = () => {
                 setCount(productCount + 1)
                 break;
             case "subtract":
-                console.log(productCount)
                 if (productCount > 0) {
                     setCount(productCount - 1)
                 }
                 break;
         }
+    }
+
+    const handleAddToCart = () => {
+        console.log(productCount)
     }
 
     return (
@@ -30,7 +33,7 @@ const CartSection = () => {
                 <div id="quantity" className={s.countNum}>{productCount}</div>
                 <Button type="picture" className={`${s.countBtn} ${s.plus}`} src={plus} onClick={() => handleQuantity('add')}/>
             </div>
-            <Button type="normal" children={`Add to Cart`} className={s.cartBtn}/>
+            <Button type="normal" children={`Add to Cart`} className={s.cartBtn} onClick={() => handleAddToCart()}/>
         </div>
     )
 }
