@@ -24,12 +24,15 @@
             position: absolute
             top: -32px
             right: 230px
-            color: $white
             font-weight: 700
             font-size: 18px
+            img 
+                svg path
+                    fill: $white !important
             
-            &:hover
-                color: $orange
+            &:hover + img
+                path
+                    fill: $orange !important
 
         .focusPicture
             height: 422px !important
@@ -49,3 +52,11 @@
 
             &.left
                 left: 200px
+
+        .thumbSection
+
+            .thumbs
+                height: 96px
+                width: auto
+                margin: 8px
+                border-radius: 20%

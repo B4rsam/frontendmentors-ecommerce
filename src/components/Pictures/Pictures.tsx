@@ -14,6 +14,7 @@ import PicModal from '../Modal/PicModal/PicModal'
 const PictureSection = () => {
     const [currentPic, setPic] = useState(prod1)
     const [modal, setModal] = useState(false)
+    const [picList, setList] = useState([])
 
     const handleModal = () => {
         setModal(!modal)

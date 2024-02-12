@@ -21,20 +21,20 @@ const Button : FC<IButton>= ({children, className, type, src, icon, ...other}) =
             case "icon":
                 switch(icon) {
                     case "cart":
-                        return <button {...other} className={`${s.button} ${s.icon} ${className}`}><img src={cart}/></button>
+                        return <button {...other} className={`${s.button} ${s.icon} ${className}`}><img className={icon} src={cart}/></button>
                     case "close":
-                        return <button {...other} className={`${s.button} ${s.icon} ${className}`}><img src={close}/></button>
+                        return <button {...other} className={`${s.button} ${s.icon} ${className}`}><img className={icon} src={close}/></button>
                     case "next":
-                        return <button {...other} className={`${s.button} ${s.icon} ${className}`}><img src={next}/></button>
+                        return <button {...other} className={`${s.button} ${s.icon} ${className}`}><img className={icon} src={next}/></button>
                     case "back":
-                        return <button {...other} className={`${s.button} ${s.icon} ${className}`}><img src={back}/></button>
+                        return <button {...other} className={`${s.button} ${s.icon} ${className}`}><img className={icon} src={back}/></button>
                 }
             case "picture":
-                return <button {...other} className={`${s.button} ${s.picture} ${className}`}><img src={src}/></button>
+                return <button {...other} className={`${s.button} ${s.picture} ${className}`}><img className="picture" src={src}/></button>
             case "normal":
                 return (
                     <div className={className}>
-                        <img src={cart} className={s.btnImg}/>
+                        <img className={`${icon} ${s.btnImg}`} src={cart} />
                         <button {...other} className={`${s.button} ${s[type]} ${className}`}>{children}</button>
                     </div>
                     )
