@@ -3,9 +3,13 @@ import Button from "../Button/Button"
 import Avatar from "../Avatar/Avatar"
 import s from './navbar.module.sass'
 import CartModal from "../Modal/CartModal/CartModal"
-import { useState } from "react"
+import { FC, HTMLAttributes, useState } from "react"
 
-const NavBar = () => {
+interface INav extends HTMLAttributes<HTMLDivElement> {
+    cartCount: any;
+}
+
+const NavBar : FC<INav>= ({cartCount}) => {
     const [showModal, setShow] = useState(false)
     const handleModal = () => {
         setShow(!showModal)
@@ -28,7 +32,7 @@ const NavBar = () => {
                 <Button type="icon" children="a" className={s.cartButton} icon="cart" onClick={handleModal}/>
                 <Avatar />
             </div>
-            {showModal ? <CartModal count={3}/> : null}
+            {showModal ? <CartModal count={cartCount}/> : null}
         </div>
     )
 }

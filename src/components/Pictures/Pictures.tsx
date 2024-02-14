@@ -26,7 +26,7 @@ const PictureSection = () => {
             <Button type="picture" className={s.mainPic} src={currentPic} onClick={handleModal}/>
             <form className={s.thumbs}>
                 <label className={s.thumbnails}>
-                    <input type="radio" name="thumbs" className={s.thumbnails} onChange={() => setPic(prod1)}/>
+                    <input type="radio" name="thumbs" className={s.thumbnails} onChange={() => setPic(prod1)} defaultChecked={true}/>
                     <img src={thumb1} />
                 </label>
                 <label className={s.thumbnails}>

@@ -2,15 +2,22 @@ import NavBar from "./components/NavBar/NavBar"
 import s from './App.module.sass'
 import PictureSection from "./components/Pictures/Pictures"
 import ContentSection from "./components/Content/Content"
+import useViewController from "./utils/useViewController"
 
 function App() {
+  const {
+    productCount,
+    cartCount,
+    handleQuantity,
+    handleAddToCart
+  } = useViewController()
 
   return (
     <div>
-      <NavBar />
+      <NavBar cartCount={cartCount}/>
       <div className={s.mainBody}>
         <PictureSection />
-        <ContentSection />
+        <ContentSection count={productCount} handleQuantity={handleQuantity} handleAddToCart={handleAddToCart}/>
       </div>
     </div>
   )
