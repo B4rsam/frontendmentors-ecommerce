@@ -5,8 +5,8 @@ import minus from '../../assets/icons/icon-minus.svg'
 import { FC, HTMLAttributes, ReactNode, useState } from 'react';
 interface ICart extends HTMLAttributes<HTMLDivElement> {
     count : number;
-    handleQuantity : any;
-    handleAddToCart : any;
+    handleQuantity : any
+    handleAddToCart : () => void;
 }
 
 const CartSection : FC<ICart>= ({count, handleQuantity, handleAddToCart}) => {

@@ -3,10 +3,11 @@ import cart from '../../assets/icons/icon-cart.svg'
 import close from '../../assets/icons/icon-close.svg'
 import next from '../../assets/icons/icon-next.svg'
 import back from '../../assets/icons/icon-previous.svg'
+import trash from '../../assets/icons/icon-delete.svg'
 import s from './button.module.sass';
 
 type btnTypes= "primary" | "navbar" | "icon" | "picture" | "normal";
-type validIcons = "cart" | "close" | "next" | "back";
+type validIcons = "cart" | "close" | "next" | "back" | "trash";
 interface IButton extends HTMLAttributes<HTMLButtonElement> {
     children?: ReactNode;
     className?: string;
@@ -28,6 +29,8 @@ const Button : FC<IButton>= ({children, className, type, src, icon, ...other}) =
                         return <button {...other} className={`${s.button} ${s.icon} ${className}`}><img className={icon} src={next}/></button>
                     case "back":
                         return <button {...other} className={`${s.button} ${s.icon} ${className}`}><img className={icon} src={back}/></button>
+                    case "trash":
+                        return <button {...other} className={`${s.button} ${s.icon} ${className}`}><img className={icon} src={trash}/></button>
                 }
             case "picture":
                 return <button {...other} className={`${s.button} ${s.picture} ${className}`}><img className="picture" src={src}/></button>

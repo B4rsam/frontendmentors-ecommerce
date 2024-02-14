@@ -5,9 +5,10 @@ import thumb1 from '../../../assets/products/image-product-1-thumbnail.jpg'
 
 interface ICartModal extends HTMLAttributes<HTMLDivElement> {
     count: number;
+    handleTrash: () => void;
 }
 
-const CartModal : FC<ICartModal> = ({count}) => {
+const CartModal : FC<ICartModal> = ({count, handleTrash}) => {
     const handleContent = () => {
         if (count === 0) {
             return <p className={s.errorMsg}>Your cart is empty!</p>
@@ -20,6 +21,7 @@ const CartModal : FC<ICartModal> = ({count}) => {
                         <p>Fall Limited Edition Sneakers</p>
                         <p>$125.00 x {count} ${125*count}.00</p>
                     </div>
+                    <Button type='icon' className={s.trash} icon={"trash"} onClick={handleTrash}/>
                 </div>
             )    
         }

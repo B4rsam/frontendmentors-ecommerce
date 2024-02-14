@@ -9,12 +9,13 @@ function App() {
     productCount,
     cartCount,
     handleQuantity,
-    handleAddToCart
+    handleAddToCart,
+    handleTrash
   } = useViewController()
 
   return (
     <div>
-      <NavBar cartCount={cartCount}/>
+      <NavBar cartCount={cartCount} handleTrash={handleTrash}/>
       <div className={s.mainBody}>
         <PictureSection />
         <ContentSection count={productCount} handleQuantity={handleQuantity} handleAddToCart={handleAddToCart}/>

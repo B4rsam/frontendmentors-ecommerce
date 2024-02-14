@@ -19,13 +19,26 @@ interface IPicModal extends HTMLAttributes<HTMLDivElement> {
 const PicModal : FC<IPicModal>= ({focusPicture, onExit}) => {
     const [focusPic, setPic] = useState(focusPicture)
     const picList = [prod1, prod2, prod3, prod4]
+    let i : number = 0;
 
     const handleSwitch = (direction : direction) => {
-        if (direction === 'left') {
-            console.log(direction)
-        }
-        else {
-            console.log(direction)
+        switch(direction) {
+            case 'left':
+                i--;
+                if (i < 0) {
+                    i = 3;
+                }
+                console.log(i)
+                setPic(picList[i])
+                break;
+            case 'right':
+                i++;
+                console.log(i)
+                if (i > 3) {
+                    i = 0;
+                }
+                setPic(picList[i])
+                break;
         }
     }
 

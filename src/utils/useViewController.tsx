@@ -20,14 +20,20 @@ const useViewController = () => {
     }
 
     const handleAddToCart = () => {
-        setCart(productCount)
+        const currentCount = cartCount;
+        setCart(currentCount + productCount)
+    }
+
+    const handleTrash = () => {
+        setCart(0)
     }
 
     return {
         productCount,
         cartCount,
         handleQuantity,
-        handleAddToCart
+        handleAddToCart,
+        handleTrash
     }
 }
 

@@ -7,9 +7,10 @@ import { FC, HTMLAttributes, useState } from "react"
 
 interface INav extends HTMLAttributes<HTMLDivElement> {
     cartCount: any;
+    handleTrash: () => void;
 }
 
-const NavBar : FC<INav>= ({cartCount}) => {
+const NavBar : FC<INav>= ({cartCount, handleTrash}) => {
     const [showModal, setShow] = useState(false)
     const handleModal = () => {
         setShow(!showModal)
@@ -32,7 +33,7 @@ const NavBar : FC<INav>= ({cartCount}) => {
                 <Button type="icon" children="a" className={s.cartButton} icon="cart" onClick={handleModal}/>
                 <Avatar />
             </div>
-            {showModal ? <CartModal count={cartCount}/> : null}
+            {showModal ? <CartModal count={cartCount} handleTrash={handleTrash}/> : null}
         </div>
     )
 }
