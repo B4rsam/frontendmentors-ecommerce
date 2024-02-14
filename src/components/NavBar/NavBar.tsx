@@ -21,7 +21,7 @@ const NavBar : FC<INav>= ({cartCount, handleTrash}) => {
         <div className={s.navBar}>
             <div className={s.leftBox}>
                 <Logo />
-                <div className="buttons">
+                <div className={s.buttonBox}>
                     <Button type="navbar" children="Collections"/>
                     <Button type="navbar" children="Men"/>
                     <Button type="navbar" children="Women"/>

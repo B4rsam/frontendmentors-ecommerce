@@ -1,14 +1,6 @@
 import { FC, HTMLAttributes, useId, useState } from 'react'
 import s from './picmodal.module.sass'
 import Button from '../../Button/Button'
-import thumb1 from '../../../assets/products/image-product-1-thumbnail.jpg'
-import thumb2 from '../../../assets/products/image-product-2-thumbnail.jpg'
-import thumb3 from '../../../assets/products/image-product-3-thumbnail.jpg'
-import thumb4 from '../../../assets/products/image-product-4-thumbnail.jpg'
-import prod1 from '../../../assets/products/image-product-1.jpg'
-import prod2 from '../../../assets/products/image-product-2.jpg'
-import prod3 from '../../../assets/products/image-product-3.jpg'
-import prod4 from '../../../assets/products/image-product-4.jpg'
 
 type direction = 'left' | 'right';
 interface IPicModal extends HTMLAttributes<HTMLDivElement> {
