@@ -14,7 +14,7 @@ type direction = 'left' | 'right';
 interface IPicModal extends HTMLAttributes<HTMLDivElement> {
     focusPicture: any;
     onExit: () => void;
-    picList: Array<{prod: any, thumb: any}>;
+    picList: Array<{prod: any, thumb: any, id: number}>;
 }
 
 const PicModal : FC<IPicModal>= ({focusPicture, onExit, picList}) => {
@@ -22,7 +22,7 @@ const PicModal : FC<IPicModal>= ({focusPicture, onExit, picList}) => {
     const [index, setIndex] = useState(0)
 
     const listMapper = () => {
-        return (picList.map((item) => <img src={item.thumb} className={s.thumbs} key={useId()}/>))
+        return (picList.map((item) => <img src={item.thumb} className={`${s.thumbs} ${index === item.id ? s.focused : null}`} key={item.id} />))
     }
 
     const handleSwitch = (direction : direction) => {

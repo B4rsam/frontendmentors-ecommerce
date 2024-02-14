@@ -21,9 +21,7 @@
         align-items: center
 
         .closeBtn
-            position: absolute
-            top: -32px
-            right: 230px
+            align-self: center
             font-weight: 700
             font-size: 18px
             img 
@@ -56,10 +54,16 @@
                     left: -20px
 
         .thumbSection
-            width: 448px
+            width: 460px
 
             .thumbs
                 height: 96px
                 width: 96px
                 margin: 8px
                 border-radius: 20%
+
+                &.focused
+                    border: 3px solid
+                    border-color: $orange
+                    border-radius: 20%
+                    opacity: 0.7

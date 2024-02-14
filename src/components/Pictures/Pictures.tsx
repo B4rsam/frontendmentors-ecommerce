@@ -14,7 +14,7 @@ import PicModal from '../Modal/PicModal/PicModal'
 const PictureSection = () => {
     const [currentPic, setPic] = useState(prod1)
     const [modal, setModal] = useState(false)
-    const picList = [{prod: prod1, thumb: thumb1}, {prod: prod2, thumb: thumb2}, {prod: prod3, thumb: thumb3}, {prod: prod4, thumb: thumb4}]
+    const picList = [{prod: prod1, thumb: thumb1, id: 0}, {prod: prod2, thumb: thumb2, id: 1}, {prod: prod3, thumb: thumb3, id: 2}, {prod: prod4, thumb: thumb4, id: 3}]
     const pictureList = useMemo(() => picList.map((item, index) => {
         return ( 
             <label className={s.thumbnails} key={index}>
