@@ -6,7 +6,6 @@
 
     .quantitySection
         display: flex
-        position: relative
         background-color: $grayishblue-light
         border-radius: 10px
         padding-inline: 16px
@@ -14,25 +13,23 @@
         align-items: center
         height: 24px
         width: 64px
+        justify-content: space-between
 
         .countNum
-            padding-inline: 28px
             text-align: center
-            margin: 32px
-            position: absolute
-            left: -16px
+            margin-inline: 8px
+            width: 16px
 
         .countBtn
-            padding-inline: 8px
-            position: absolute
+            padding: 0px
             cursor: pointer
             &.minus
-                left: 8px
-                bottom: 12px
+
+                img
+                    display: flex
 
             &.plus
-                right: 8px
-                top: 10px
+
             img
                 height: auto !important
                 width: 16px !important
@@ -46,3 +43,4 @@
         padding-inline: 16px
         padding-block: 8px
         border-radius: 5px
+        height: 32px

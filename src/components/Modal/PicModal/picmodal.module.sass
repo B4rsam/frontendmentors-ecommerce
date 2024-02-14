@@ -34,29 +34,32 @@
                 path
                     fill: $orange !important
 
-        .focusPicture
-            height: 422px !important
-            width: 422px !important
-            border-radius: 20px
+        .focusHolder
+            position: relative
+            .focusPicture
+                height: 422px !important
+                width: 422px !important
+                border-radius: 20px
 
-        .switcher
-            position: absolute
-            background-color: $white
-            top: 211px
-            height: 36px
-            width: 36px
-            border-radius: 100%
+            .switcher
+                position: absolute
+                background-color: $white
+                top: 211px
+                height: 36px
+                width: 36px
+                border-radius: 100%
 
-            &.right
-                right: 200px
+                &.right
+                    right: -20px
 
-            &.left
-                left: 200px
+                &.left
+                    left: -20px
 
         .thumbSection
+            width: 448px
 
             .thumbs
                 height: 96px
-                width: auto
+                width: 96px
                 margin: 8px
                 border-radius: 20%

@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes, useState } from 'react'
+import { FC, HTMLAttributes, useId, useState } from 'react'
 import s from './picmodal.module.sass'
 import Button from '../../Button/Button'
 import thumb1 from '../../../assets/products/image-product-1-thumbnail.jpg'
@@ -12,32 +12,40 @@ import prod4 from '../../../assets/products/image-product-4.jpg'
 
 type direction = 'left' | 'right';
 interface IPicModal extends HTMLAttributes<HTMLDivElement> {
-    focusPicture: any
-    onExit: () => void
+    focusPicture: any;
+    onExit: () => void;
+    picList: Array<{prod: any, thumb: any}>;
 }
 
-const PicModal : FC<IPicModal>= ({focusPicture, onExit}) => {
+const PicModal : FC<IPicModal>= ({focusPicture, onExit, picList}) => {
     const [focusPic, setPic] = useState(focusPicture)
-    const picList = [prod1, prod2, prod3, prod4]
-    let i : number = 0;
+    const [index, setIndex] = useState(0)
+
+    const listMapper = () => {
+        return (picList.map((item) => <img src={item.thumb} className={s.thumbs} key={useId()}/>))
+    }
 
     const handleSwitch = (direction : direction) => {
         switch(direction) {
             case 'left':
-                i--;
-                if (i < 0) {
-                    i = 3;
+                if(index-1 < 0) {
+                    setIndex(picList.length-1)
+                    setPic(picList[picList.length-1].prod)
                 }
-                console.log(i)
-                setPic(picList[i])
+                else {
+                    setIndex(index-1)
+                    setPic(picList[index-1].prod)    
+                }
                 break;
             case 'right':
-                i++;
-                console.log(i)
-                if (i > 3) {
-                    i = 0;
+                if(index+1 > picList.length-1) {
+                    setIndex(0)
+                    setPic(picList[0].prod)
                 }
-                setPic(picList[i])
+                else {
+                    setIndex(index+1)
+                    setPic(picList[index+1].prod)    
+                }
                 break;
         }
     }
@@ -46,14 +54,13 @@ const PicModal : FC<IPicModal>= ({focusPicture, onExit}) => {
         <div className={s.modalWrapper} >
             <div className={s.modalBody} >
                 <Button type="icon" icon="close" className={s.closeBtn} onClick={onExit}/>
-                <img src={focusPic} className={s.focusPicture}/>
-                <Button type="icon" icon="back" className={`${s.switcher} switcher ${s.left}`} onClick={() => handleSwitch('left')}/>
-                <Button type="icon" icon="next" className={`${s.switcher} switcher ${s.right}`} onClick={() => handleSwitch('right')}/>
+                <div className={s.focusHolder}>
+                    <img src={focusPic} className={s.focusPicture}/>
+                    <Button type="icon" icon="back" className={`${s.switcher} switcher ${s.left}`} onClick={() => handleSwitch('left')}/>
+                    <Button type="icon" icon="next" className={`${s.switcher} switcher ${s.right}`} onClick={() => handleSwitch('right')}/>    
+                </div>
                 <div className={s.thumbSection}>
-                    <img src={thumb1} className={s.thumbs}/>
-                    <img src={thumb2} className={s.thumbs}/>
-                    <img src={thumb3} className={s.thumbs}/>
-                    <img src={thumb4} className={s.thumbs}/>
+                    {listMapper()}
                 </div>
             </div>
         </div>

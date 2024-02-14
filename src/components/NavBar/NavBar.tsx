@@ -30,10 +30,13 @@ const NavBar : FC<INav>= ({cartCount, handleTrash}) => {
                 </div>
             </div>
             <div className={s.rightBox}>
-                <Button type="icon" children="a" className={s.cartButton} icon="cart" onClick={handleModal}/>
+                <div className="cartModalHolder">
+                    <Button type="icon" children="a" className={s.cartButton} icon="cart" onClick={handleModal}/>
+                    {showModal ? <CartModal count={cartCount} handleTrash={handleTrash}/> : null}
+                </div>
+                
                 <Avatar />
             </div>
-            {showModal ? <CartModal count={cartCount} handleTrash={handleTrash}/> : null}
         </div>
     )
 }
