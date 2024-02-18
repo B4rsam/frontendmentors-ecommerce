@@ -5,6 +5,18 @@
     height: 422px !important
     width: 422px !important
 
+    @include mobile
+        margin: 0px
+        padding-inline: 0px
+        object-fit: contain !important
+        height: 446px !important 
+        width: auto !important
+        img
+            border-radius: 0px !important
+            object-fit: contain !important
+            height: 100% !important 
+            width: auto !important
+
 .thumbs
     display: flex
     justify-content: space-between
@@ -27,3 +39,7 @@
             border-color: $orange
             border-radius: 20%
             opacity: 0.7
+
+    @include mobile
+        display: none
+
