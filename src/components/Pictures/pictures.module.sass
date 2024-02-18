@@ -43,3 +43,28 @@
     @include mobile
         display: none
 
+.picSection
+        .switcher
+            display: none
+
+@include mobile
+    .picSection
+        display: flex
+        justify-content: space-between
+
+        .switcher
+            position: absolute
+            display: block
+            background-color: $white
+            top: 211px
+            height: 40px
+            width: 40px
+            border-radius: 100%
+        
+            &.right
+                right: 10px
+
+            &.left
+                left: 10px
+
+
