@@ -20,7 +20,7 @@ const NavBar : FC<INav>= ({cartCount, handleTrash}) => {
     return (
         <div className={s.navBar}>
             <div className={s.leftBox}>
-                <Logo />
+                <Logo className={s.logo}/>
                 <div className={s.buttonBox}>
                     <Button className={s.button} type="navbar" children="Collections"/>
                     <Button className={s.button} type="navbar" children="Men"/>

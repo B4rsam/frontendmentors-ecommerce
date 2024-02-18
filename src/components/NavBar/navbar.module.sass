@@ -29,3 +29,26 @@
     .buttons
         padding: 32px
         margin: 64px
+
+    @include mobile
+        position: fixed
+        top: 0px
+        display: flex
+        justify-content: space-between
+        background-color: $white
+        width: 100%
+        align-items: center
+        height: 5%
+        padding: 8px
+
+        .leftBox
+            margin-inline: 16px
+
+            .buttonBox
+                display: none
+
+            .logo
+                height: 28px
+                width: auto
+
+        

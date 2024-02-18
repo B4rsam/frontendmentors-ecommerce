@@ -1,8 +1,8 @@
 import logo from '../../assets/logo.svg'
 
-const Logo = () => {
+const Logo = ({...other}) => {
     return (
-        <img src={logo}/>
+        <img {...other} src={logo}/>
     )
 }
 
