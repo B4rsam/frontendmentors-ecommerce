@@ -4,6 +4,7 @@ import Avatar from "../Avatar/Avatar"
 import s from './navbar.module.sass'
 import CartModal from "../Modal/CartModal/CartModal"
 import { FC, HTMLAttributes, useState } from "react"
+import MenuModal from "../Modal/MobileMenu/MobileMenu"
 
 interface INav extends HTMLAttributes<HTMLDivElement> {
     cartCount: any;
@@ -12,15 +13,21 @@ interface INav extends HTMLAttributes<HTMLDivElement> {
 
 const NavBar : FC<INav>= ({cartCount, handleTrash}) => {
     const [showModal, setShow] = useState(false)
-    const handleModal = () => {
+    const [showMenu, setMenu] = useState(false)
+
+    const handleCart = () => {
         setShow(!showModal)
-        console.log("a")
+    }
+
+    const handleMenu = () => {
+        setMenu(!showMenu)
     }
 
     return (
         <div className={s.navBar}>
             <div className={s.leftBox}>
-                <Button className={s.menuButton} type="icon" icon="menu"/>
+                <Button className={s.menuButton} type="icon" icon="menu" onClick={handleMenu}/>
+                {showMenu ? <MenuModal onExit={handleMenu} /> : null}
                 <Logo className={s.logo}/>
                 <div className={s.buttonBox}>
                     <Button className={s.button} type="navbar" children="Collections"/>
@@ -32,7 +39,7 @@ const NavBar : FC<INav>= ({cartCount, handleTrash}) => {
             </div>
             <div className={s.rightBox}>
                 <div className="cartModalHolder">
-                    <Button type="icon" children="a" className={s.cartButton} icon="cart" onClick={handleModal}/>
+                    <Button type="icon" children="a" className={s.cartButton} icon="cart" onClick={handleCart}/>
                     {showModal ? <CartModal count={cartCount} handleTrash={handleTrash}/> : null}
                 </div>
                 

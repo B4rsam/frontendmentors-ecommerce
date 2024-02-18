@@ -1,0 +1,46 @@
+@import '../../../assets/palette'
+@import '../../../utils/mediaQuery'
+
+@include mobile
+    .modalWrapper
+        position: fixed
+        top: 0px
+        left: 0px
+        bottom: 0px
+        right: 0px
+        height: 100%
+        width: 100%
+        margin: 0px
+        background-color: rgba(0,0,0,0.5)
+
+        .contentSection
+            margin: 0px
+            position: fixed
+            top: 0px
+            left: 0px
+            height: 100%
+            width: 70%
+            background-color: $white
+
+            .closeBtn
+                margin: 8px
+                margin-top: 16px
+                height: 16px
+                width: auto
+                &:hover
+                    cursor: pointer
+                img
+                    height: 28px
+                    width: auto
+
+            .menuButtons
+                display: flex
+                flex-direction: column
+                align-items: flex-start
+                margin-inline: 8px
+                margin-block: 32px
+
+                .menuButton
+                    padding-block: 8px
+                    color: $black !important
+                    font-size: 24px
