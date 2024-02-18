@@ -23,3 +23,22 @@
             width: auto
             &:hover
                 cursor: pointer
+
+.normalLabel
+    background-color: $orange
+    display: flex
+    align-items: center
+    justify-content: space-between
+    border-radius: 5px
+    padding: 8px
+    max-width: 128px
+    width: 100%
+
+    .button
+        color: $white
+
+    @include mobile
+        width: 100% !important
+        max-width: 50% !important
+        display: inline-block
+        padding-inline: 110px

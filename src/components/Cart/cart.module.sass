@@ -37,14 +37,15 @@
                 align-self: center
                 
 
-    .cartBtn
+    .normalLabel
         margin-inline: 32px
         background-color: $orange
-        color: $orange-pale
+        color: $orange-pale !important
         padding-inline: 16px
         padding-block: 8px
         border-radius: 5px
         height: 32px
+
 
     @include mobile
         display: block
@@ -55,6 +56,7 @@
             height: 5%
             margin: 8px
 
-        .cartBtn
-            margin: 8px
-            width: 90%
+        .normalLabel
+            width: 100% !important
+            .cartBtn
+                color: blue !important
