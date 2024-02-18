@@ -22,11 +22,11 @@ const NavBar : FC<INav>= ({cartCount, handleTrash}) => {
             <div className={s.leftBox}>
                 <Logo />
                 <div className={s.buttonBox}>
-                    <Button type="navbar" children="Collections"/>
-                    <Button type="navbar" children="Men"/>
-                    <Button type="navbar" children="Women"/>
-                    <Button type="navbar" children="About"/>
-                    <Button type="navbar" children="Contact"/>
+                    <Button className={s.button} type="navbar" children="Collections"/>
+                    <Button className={s.button} type="navbar" children="Men"/>
+                    <Button className={s.button} type="navbar" children="Women"/>
+                    <Button className={s.button} type="navbar" children="About"/>
+                    <Button className={s.button} type="navbar" children="Contact"/>
                 </div>
             </div>
             <div className={s.rightBox}>
