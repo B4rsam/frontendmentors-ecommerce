@@ -24,7 +24,7 @@ const NavBar : FC<INav>= ({cartCount, handleTrash}) => {
     }
 
     return (
-        <div className={s.navBar}>
+        <div className={`${s.navBar} ${!showMenu ? `${s.isFixed}` : null}`}>
             <div className={s.leftBox}>
                 <Button className={s.menuButton} type="icon" icon="menu" onClick={handleMenu}/>
                 {showMenu ? <MenuModal onExit={handleMenu} /> : null}
