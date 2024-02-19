@@ -17,8 +17,11 @@ function App() {
     <div>
       <NavBar cartCount={cartCount} handleTrash={handleTrash}/>
       <div className={s.mainBody}>
-        <PictureSection />
-        <ContentSection count={productCount} handleQuantity={handleQuantity} handleAddToCart={handleAddToCart}/>
+      <PictureSection />
+        <div className={s.mobileContent}>
+          <ContentSection count={productCount} handleQuantity={handleQuantity} handleAddToCart={handleAddToCart}/>
+        </div>
+        
       </div>
     </div>
   )
