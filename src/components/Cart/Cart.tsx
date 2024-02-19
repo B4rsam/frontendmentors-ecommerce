@@ -10,8 +10,6 @@ interface ICart extends HTMLAttributes<HTMLDivElement> {
 }
 
 const CartSection : FC<ICart>= ({count, handleQuantity, handleAddToCart}) => {
-
-
     return (
         <div className={s.cartBody}>
             <div className={s.quantitySection}>
