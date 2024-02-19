@@ -18,10 +18,9 @@ function App() {
       <NavBar cartCount={cartCount} handleTrash={handleTrash}/>
       <div className={s.mainBody}>
       <PictureSection />
-        <div className={s.mobileContent}>
+        <div className={s.contentContainer}>
           <ContentSection count={productCount} handleQuantity={handleQuantity} handleAddToCart={handleAddToCart}/>
         </div>
-        
       </div>
     </div>
   )
