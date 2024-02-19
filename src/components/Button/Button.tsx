@@ -39,7 +39,7 @@ const Button : FC<IButton>= ({children, className, type, src, icon, ...other}) =
                 return <button {...other} className={`${s.button} ${s.picture} ${className}`}><img className="picture" src={src}/></button>
             case "normal":
                 return (
-                        <button className={`${s.button} ${s[type]} ${className}`}><img src={cart}/>{children}</button>
+                        <button {...other} className={`${s.button} ${s[type]} ${className}`}><img src={cart}/>{children}</button>
                     )
             default:
                 return <button {...other} className={`${s.button} ${s[type]} ${className}`}>{children}</button>
