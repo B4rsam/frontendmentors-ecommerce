@@ -24,21 +24,21 @@
             &:hover
                 cursor: pointer
 
-.normalLabel
-    background-color: $orange
-    display: flex
-    align-items: center
-    justify-content: space-between
-    border-radius: 5px
-    padding: 8px
-    max-width: 128px
-    width: 100%
+    &.normal
+        background-color: $orange
+        display: flex
+        align-items: center
+        justify-content: space-between
+        border-radius: 5px
+        padding: 8px
+        max-width: 128px
+        width: 100%
+        color: $white
+        @include mobile
+            width: 100% !important
+            max-width: 100% !important
+            justify-content: center
+        
 
     .button
         color: $white
-
-    @include mobile
-        width: 100% !important
-        max-width: 50% !important
-        display: inline-block
-        padding-inline: 110px
